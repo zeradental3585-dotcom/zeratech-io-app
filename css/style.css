@@ -31,6 +31,17 @@ nav.site a:hover{color:#fff;text-decoration:none}
 nav.site a.cta{background:var(--indigo);color:#fff;padding:9px 18px;border-radius:8px}
 nav.site a.cta:hover{background:var(--indigo-dark)}
 
+.menu-toggle{display:none;background:none;border:1px solid rgba(255,255,255,.25);color:#fff;font-size:20px;line-height:1;width:42px;height:38px;border-radius:8px;cursor:pointer}
+.menu-toggle:hover{border-color:rgba(255,255,255,.5)}
+
+@media (max-width:780px){
+  .menu-toggle{display:block}
+  nav.site{display:none;width:100%;flex-direction:column;align-items:stretch;gap:0;order:3}
+  nav.site.open{display:flex}
+  nav.site a{width:100%;padding:12px 4px;border-top:1px solid rgba(255,255,255,.08)}
+  nav.site a.cta{margin-top:10px;text-align:center;border-top:none}
+}
+
 /* Hero */
 .hero{background:linear-gradient(160deg,var(--ink) 0%,#1e2a4a 60%,var(--indigo-dark) 130%);color:#fff;padding:72px 0 64px}
 .hero h1{color:#fff;font-size:clamp(32px,5vw,50px);max-width:780px}
@@ -58,7 +69,10 @@ main section{padding:64px 0}
 
 .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
 .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
-@media (max-width:820px){.grid-3,.grid-2{grid-template-columns:1fr}}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+@media (max-width:900px){.grid-3,.grid-4{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:820px){.grid-2{grid-template-columns:1fr}}
+@media (max-width:560px){.grid-3,.grid-4{grid-template-columns:1fr}}
 
 .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:26px}
 .service-card .icon{font-size:30px;margin-bottom:12px}
@@ -138,3 +152,16 @@ footer.site .foot-bottom a{color:#cbd5e1}
 
 .privacy-body h2{font-size:19px;margin-top:28px}
 .privacy-body p,.privacy-body li{color:var(--text)}
+
+/* Mobile polish (kept last so it wins the cascade at matching widths) */
+@media (max-width:600px){
+  main section{padding:40px 0}
+  .hero{padding:40px 0 32px}
+  .hero-ctas{margin-bottom:24px}
+  .trust-bar{gap:18px}
+  .trust-item{min-width:130px}
+  .section-head{margin-bottom:24px}
+  .whatsapp-float{width:50px;height:50px;font-size:24px;bottom:16px;right:16px}
+  form.lead-form{padding:20px}
+  header.site .wrap{padding:14px 20px}
+}
