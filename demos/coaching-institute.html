@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="hi-IN" data-audience="india">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sample Coaching Institute Website | Demo by Zera Technologies</title>
+<meta name="description" content="A sample coaching institute website built by Zera Technologies. See how your institute's courses, batches, results and WhatsApp enquiries could look.">
+<meta name="robots" content="noindex,follow">
+<link rel="canonical" href="https://zeratech.io/demos/coaching-institute.html">
+<meta property="og:title" content="Sample coaching institute website — Zera Technologies">
+<meta property="og:description" content="See how your coaching institute's website could look: courses, batches, results and WhatsApp enquiries.">
+<meta property="og:image" content="https://zeratech.io/og-image.png">
+<meta property="og:url" content="https://zeratech.io/demos/coaching-institute.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#7a1f2b">
+<script src="/js/site.js" defer></script>
+<style>
+:root{--ink:#1d1a17;--muted:#6b625a;--line:#eadfd3;--bg:#fffaf3;--card:#fff;--brand:#7a1f2b;--brand-2:#a8323f;--gold:#e0a526;--wa:#1fae5b;--font:system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans Devanagari","Noto Sans",Arial,sans-serif}
+*{box-sizing:border-box}body{margin:0;font-family:var(--font);color:var(--ink);background:var(--bg);font-size:16.5px;line-height:1.6}
+a{color:var(--brand)}img{max-width:100%}
+.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+.demo-bar{background:#111;color:#fff;font-size:.88rem;padding:9px 0;text-align:center}
+.demo-bar a{color:#ffd56b;font-weight:700}
+header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
+header .wrap{display:flex;align-items:center;justify-content:space-between;min-height:60px;gap:10px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--brand);text-decoration:none;line-height:1.15}
+.brand b{width:38px;height:38px;border-radius:10px;background:var(--brand);color:#fff;display:grid;place-items:center;font-size:1.1rem}
+.brand small{display:block;color:var(--muted);font-weight:600;font-size:.72rem}
+.call{background:var(--brand);color:#fff;text-decoration:none;font-weight:700;padding:9px 14px;border-radius:10px;font-size:.92rem;white-space:nowrap}
+.hero{background:linear-gradient(160deg,#7a1f2b 0%,#a8323f 60%,#c2543d 100%);color:#fff;padding:40px 0 46px}
+.hero h1{font-size:clamp(1.8rem,6vw,2.8rem);line-height:1.2;margin:.2em 0 .4em}
+.hero p{color:#fbe8e3;font-size:1.08rem;max-width:640px}
+.pill{display:inline-block;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:99px;font-size:.85rem;font-weight:700}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 20px;border-radius:12px;font-weight:800;text-decoration:none}
+.btn-wa{background:var(--wa);color:#fff}.btn-light{background:#fff;color:var(--brand)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:26px;max-width:560px}
+.stats div{background:rgba(255,255,255,.12);border-radius:12px;padding:12px;text-align:center}
+.stats strong{display:block;font-size:1.3rem}.stats span{font-size:.8rem;color:#fbe8e3}
+section{padding:44px 0}
+h2{font-size:clamp(1.4rem,4.5vw,2rem);margin:0 0 .3em;line-height:1.25}
+.sub{color:var(--muted);margin:0 0 22px}
+.grid{display:grid;gap:14px}
+@media(min-width:640px){.g2{grid-template-columns:1fr 1fr}.g3{grid-template-columns:1fr 1fr}}
+@media(min-width:900px){.g3{grid-template-columns:repeat(3,1fr)}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
+.card h3{margin:0 0 6px;font-size:1.12rem}
+.tag{display:inline-block;background:#fdf0dc;color:#8a5a00;font-size:.75rem;font-weight:800;padding:3px 9px;border-radius:99px;margin-bottom:8px}
+.card .wa{display:inline-block;margin-top:10px;font-weight:800;color:var(--wa);text-decoration:none}
+table{width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden;font-size:.95rem}
+th,td{padding:11px 12px;border-bottom:1px solid var(--line);text-align:left}
+th{background:#fbefe6}
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:12px}
+.notice{border-left:4px solid var(--gold);background:#fff;border-radius:10px;padding:12px 14px;margin-bottom:10px}
+.notice time{font-size:.8rem;color:var(--muted);font-weight:700}
+.topper{text-align:center}
+.avatar{width:72px;height:72px;border-radius:50%;margin:0 auto 8px;background:linear-gradient(135deg,#f3d9c5,#e8b9a0);display:grid;place-items:center;font-weight:800;color:var(--brand);font-size:1.3rem}
+.ph{font-size:.78rem;color:var(--muted)}
+.soft{background:#fff3e6}
+.map{height:200px;border-radius:14px;background:repeating-linear-gradient(45deg,#f4e6d6,#f4e6d6 12px,#efdcc6 12px,#efdcc6 24px);display:grid;place-items:center;color:var(--muted);font-weight:700;text-align:center;padding:10px}
+.pitch{background:#111;color:#eee;padding:36px 0}
+.pitch h2{color:#fff}.pitch p{color:#cfcfcf}
+.pitch ul{padding-left:1.1em}
+footer{background:#2a0e12;color:#e9cfd2;padding:24px 0 90px;font-size:.88rem}
+footer a{color:#ffd56b}
+.wa-float{position:fixed;right:16px;bottom:16px;background:var(--wa);color:#fff;border-radius:99px;padding:13px 18px;font-weight:800;text-decoration:none;box-shadow:0 8px 24px rgba(31,174,91,.4);z-index:30}
+</style>
+</head>
+<body>
+<div class="demo-bar"><div class="wrap">🔍 This is a <strong>sample website</strong> made by Zera Technologies. Name, photos and results are placeholders. <a href="/website-for-coaching-institute.html">Get one for your institute →</a></div></div>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="#top"><b>आ</b><span>Your Institute Name<small>आपका इंस्टीट्यूट · Your City</small></span></a>
+    <a class="call" href="https://wa.me/919835102324" data-topic="Sample coaching website" data-loc="demo-header">WhatsApp करें</a>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap">
+    <span class="pill">📢 नया बैच शुरू · New batch starting soon</span>
+    <h1>सही मार्गदर्शन, बेहतर रिजल्ट।<br>Coaching for Board, NEET &amp; JEE</h1>
+    <p>Experienced faculty, small batches and weekly tests. Visit the centre or message us on WhatsApp to know fees and batch timings.</p>
+    <div class="btns">
+      <a class="btn btn-wa" href="https://wa.me/919835102324" data-topic="Sample coaching website" data-loc="demo-hero">💬 WhatsApp पर पूछें</a>
+      <a class="btn btn-light" href="#courses">कोर्स देखें</a>
+    </div>
+    <div class="stats">
+      <div><strong>00+</strong><span>Years teaching</span></div>
+      <div><strong>00+</strong><span>Students taught</span></div>
+      <div><strong>00</strong><span>Selections</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="courses">
+  <div class="wrap">
+    <h2>हमारे कोर्स · Our Courses</h2>
+    <p class="sub">Every course gets its own section, so students searching Google for that exact course can find you.</p>
+    <div class="grid g3">
+      <article class="card"><span class="tag">Class 9–10</span><h3>Board Foundation</h3><p>Maths, Science and English with weekly tests and doubt classes.</p><a class="wa" href="https://wa.me/919835102324" data-topic="Sample coaching website — course button" data-loc="demo-course">WhatsApp for fees →</a></article>
+      <article class="card"><span class="tag">Class 11–12</span><h3>NEET Preparation</h3><p>Physics, Chemistry, Biology with full-syllabus mock tests.</p><a class="wa" href="https://wa.me/919835102324" data-topic="Sample coaching website — course button" data-loc="demo-course">WhatsApp for fees →</a></article>
+      <article class="card"><span class="tag">Class 11–12</span><h3>JEE Main</h3><p>Concept classes, practice sheets and test analysis.</p><a class="wa" href="https://wa.me/919835102324" data-topic="Sample coaching website — course button" data-loc="demo-course">WhatsApp for fees →</a></article>
+      <article class="card"><span class="tag">Graduates</span><h3>SSC / Banking</h3><p>Quant, reasoning, English and GK for competitive exams.</p><a class="wa" href="https://wa.me/919835102324" data-topic="Sample coaching website — course button" data-loc="demo-course">WhatsApp for fees →</a></article>
+      <article class="card"><span class="tag">All ages</span><h3>Spoken English</h3><p>Speaking practice, interview preparation and confidence building.</p><a class="wa" href="https://wa.me/919835102324" data-topic="Sample coaching website — course button" data-loc="demo-course">WhatsApp for fees →</a></article>
+      <article class="card"><span class="tag">Short course</span><h3>Computer Basics</h3><p>MS Office, typing and internet skills with certificate.</p><a class="wa" href="https://wa.me/919835102324" data-topic="Sample coaching website — course button" data-loc="demo-course">WhatsApp for fees →</a></article>
+    </div>
+  </div>
+</section>
+
+<section class="soft">
+  <div class="wrap">
+    <h2>बैच टाइमिंग · Batch Timings</h2>
+    <p class="sub">Updated from a Google Sheet — change the sheet, the website updates.</p>
+    <div class="tbl"><table>
+      <tr><th>Course</th><th>Batch</th><th>Days</th><th>Starts</th></tr>
+      <tr><td>Board Foundation</td><td>7:00 – 8:30 AM</td><td>Mon–Sat</td><td>DD/MM</td></tr>
+      <tr><td>NEET</td><td>4:00 – 6:00 PM</td><td>Mon–Sat</td><td>DD/MM</td></tr>
+      <tr><td>JEE Main</td><td>6:00 – 8:00 PM</td><td>Mon–Sat</td><td>DD/MM</td></tr>
+      <tr><td>Spoken English</td><td>5:00 – 6:00 PM</td><td>Mon–Fri</td><td>DD/MM</td></tr>
+    </table></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap grid g2">
+    <div>
+      <h2>रिजल्ट · Our Toppers</h2>
+      <p class="sub">Your real results and photos go here — your strongest proof for new students.</p>
+      <div class="grid g3" style="grid-template-columns:repeat(3,1fr)">
+        <div class="card topper"><div class="avatar">A</div><strong>Student name</strong><div class="ph">Score / rank · Year</div></div>
+        <div class="card topper"><div class="avatar">B</div><strong>Student name</strong><div class="ph">Score / rank · Year</div></div>
+        <div class="card topper"><div class="avatar">C</div><strong>Student name</strong><div class="ph">Score / rank · Year</div></div>
+      </div>
+    </div>
+    <div>
+      <h2>सूचना पट्ट · Notice Board</h2>
+      <p class="sub">Exam dates, holidays and new batches.</p>
+      <div class="notice"><time>DD/MM</time><div>New NEET batch — registration open.</div></div>
+      <div class="notice"><time>DD/MM</time><div>Weekly test on Sunday, 10 AM.</div></div>
+      <div class="notice"><time>DD/MM</time><div>Centre closed for festival holiday.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="soft">
+  <div class="wrap grid g2" style="align-items:center">
+    <div>
+      <h2>हमसे मिलें · Visit Us</h2>
+      <p>Your full address, landmark and timings go here, with Google Maps directions and a one-tap call button.</p>
+      <p><strong>Timings:</strong> Mon–Sat, 7 AM – 8 PM</p>
+      <a class="btn btn-wa" href="https://wa.me/919835102324" data-topic="Sample coaching website" data-loc="demo-visit">💬 WhatsApp करें</a>
+    </div>
+    <div class="map">📍 Google Map of your centre<br>appears here</div>
+  </div>
+</section>
+
+<section class="pitch">
+  <div class="wrap">
+    <h2>Want this for your institute?</h2>
+    <p>Zera Technologies builds websites like this for coaching institutes, with your name, courses, real photos and results — in Hindi, English or both.</p>
+    <ul>
+      <li>Works fast on every phone, even on slow data</li>
+      <li>WhatsApp button on every course, so enquiries come straight to you</li>
+      <li>Set up on Google and Google Maps so local students find you</li>
+      <li>Batches, notices and results you can update from a Google Sheet</li>
+    </ul>
+    <div class="btns">
+      <a class="btn btn-wa" href="https://wa.me/919835102324" data-topic="I saw the sample coaching website — want one for my institute" data-loc="demo-pitch">Get a quote on WhatsApp</a>
+      <a class="btn btn-light" href="/website-for-coaching-institute.html">Learn more</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">Sample website for demonstration only — not a real institute. Designed and developed by <a href="https://zeratech.io/" target="_blank" rel="noopener noreferrer">Zera Technologies</a>. © <span data-year>2026</span> Zera Technologies.</div>
+</footer>
+<a class="wa-float" href="https://wa.me/919835102324" data-topic="Sample coaching website" data-loc="demo-float">💬 WhatsApp</a>
+</body>
+</html>
