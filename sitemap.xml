@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://zeratech.io/</loc></url>
-  <url><loc>https://zeratech.io/services.html</loc></url>
-  <url><loc>https://zeratech.io/pricing.html</loc></url>
-  <url><loc>https://zeratech.io/portfolio.html</loc></url>
-  <url><loc>https://zeratech.io/about.html</loc></url>
-  <url><loc>https://zeratech.io/contact.html</loc></url>
-  <url><loc>https://zeratech.io/privacy.html</loc></url>
-  <url><loc>https://zeratech.io/case-studies/bighawala.html</loc></url>
-  <url><loc>https://zeratech.io/case-studies/safalbalak.html</loc></url>
-  <url><loc>https://zeratech.io/case-studies/udakishunganj.html</loc></url>
+  <url><loc>https://zeratech.io/</loc><lastmod>2026-11-02</lastmod></url>
+  <url><loc>https://zeratech.io/about.html</loc><lastmod>2026-11-02</lastmod></url>
+  <url><loc>https://zeratech.io/affordable-web-development-small-business.html</loc><lastmod>2026-11-02</lastmod></url>
+  <url><loc>https://zeratech.io/case-studies/bighawala.html</loc><lastmod>2026-11-02</lastmod></url>
+  <url><loc>https://zeratech.io/case-studies/safalbalak.html</loc><lastmod>2026-11-02</lastmod></url>
+  <url><loc>https://zeratech.io/case-studies/udakishunganj.html</loc><lastmod>2026-11-02</lastmod></url>
+  <url><loc>https://zeratech.io/contact.html</loc><lastmod>2026-11-02</lastmod></url>
+  <url><loc>https://zeratech.io/free-website-audit.html</loc><lastmod>2026-11-02</lastmod></url>
+  <url><loc>https://zeratech.io/how-we-work.html</loc><lastmod>2026-11-02</lastmod></url>
+  <url><loc>https://zeratech.io/portfolio.html</loc><lastmod>2026-11-02</lastmod></url>
+  <url><loc>https://zeratech.io/pricing.html</loc><lastmod>2026-11-02</lastmod></url>
+  <url><loc>https://zeratech.io/privacy.html</loc><lastmod>2026-11-02</lastmod></url>
+  <url><loc>https://zeratech.io/services.html</loc><lastmod>2026-11-02</lastmod></url>
+  <url><loc>https://zeratech.io/white-label-web-development.html</loc><lastmod>2026-11-02</lastmod></url>
 </urlset>
