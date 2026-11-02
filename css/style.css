@@ -158,3 +158,5 @@ p{margin:0 0 1em}
 .table th{background:var(--bg-soft)}
 .table-wrap{overflow-x:auto}
 .note{background:#fff8e6;border:1px solid #f5d38a;border-radius:12px;padding:14px 16px;font-size:.95rem}
+@media(min-width:640px){.g5{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1000px){.g5{grid-template-columns:1.2fr repeat(4,1fr)}}
