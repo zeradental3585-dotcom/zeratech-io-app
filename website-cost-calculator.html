@@ -132,7 +132,7 @@
      "name": "How much does a website cost in India in 2026?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "A small-business website typically costs ₹3,000–15,000 from cheap template sellers, ₹10,000–40,000 from freelancers, and ₹50,000–1,50,000+ from agencies. DIY builders cost ₹6,000–18,000 every year. Our custom, hand-coded packages are ₹9,999, ₹19,999 and ₹34,999 with domain and first-year hosting included."
+      "text": "A small-business website typically costs ₹3,000–15,000 from cheap template sellers, ₹10,000–40,000 from freelancers, and ₹50,000–1,50,000+ from agencies. DIY builders cost ₹6,000–18,000 every year. Our custom, hand-coded packages are ₹9,999, ₹19,999 and ₹34,999 (plus 18% GST) with domain and first-year hosting included."
      }
     },
     {
@@ -141,6 +141,14 @@
      "acceptedAnswer": {
       "@type": "Answer",
       "text": "Typical 2026 ranges are $200–1,000 for DIY builders, $1,500–8,000 for freelancers and $5,000–25,000 for small agencies. Our websites start at $249, with business sites at $599 and booking or e-commerce sites at $1,299."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Is GST included in the calculator price?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. Indian prices are shown before 18% GST; the calculator shows the total with GST underneath. You receive a GST invoice. International (USD) prices have no Indian GST."
      }
     },
     {
@@ -254,6 +262,7 @@
     <aside class="card result" id="r-result" aria-live="polite">
       <span class="eyebrow">Your price</span>
       <div class="big" id="r-total">₹9,999</div>
+      <div id="r-gst" class="muted gst"></div>
       <div id="r-monthly" class="muted"></div>
       <p id="r-pkg" class="pkg"></p>
       <ul id="r-lines" class="lines"></ul>
@@ -294,8 +303,9 @@
 
 <section class="section soft faq"><div class="wrap" style="max-width:820px">
 <div class="center"><span class="eyebrow">FAQ</span><h2>Common questions</h2></div>
-<details><summary>How much does a website cost in India in 2026?</summary><div>A small-business website typically costs ₹3,000–15,000 from cheap template sellers, ₹10,000–40,000 from freelancers, and ₹50,000–1,50,000+ from agencies. DIY builders cost ₹6,000–18,000 every year. Our custom, hand-coded packages are ₹9,999, ₹19,999 and ₹34,999 with domain and first-year hosting included.</div></details>
+<details><summary>How much does a website cost in India in 2026?</summary><div>A small-business website typically costs ₹3,000–15,000 from cheap template sellers, ₹10,000–40,000 from freelancers, and ₹50,000–1,50,000+ from agencies. DIY builders cost ₹6,000–18,000 every year. Our custom, hand-coded packages are ₹9,999, ₹19,999 and ₹34,999 (plus 18% GST) with domain and first-year hosting included.</div></details>
 <details><summary>How much does a small business website cost in the US or UK?</summary><div>Typical 2026 ranges are $200–1,000 for DIY builders, $1,500–8,000 for freelancers and $5,000–25,000 for small agencies. Our websites start at $249, with business sites at $599 and booking or e-commerce sites at $1,299.</div></details>
+<details><summary>Is GST included in the calculator price?</summary><div>No. Indian prices are shown before 18% GST; the calculator shows the total with GST underneath. You receive a GST invoice. International (USD) prices have no Indian GST.</div></details>
 <details><summary>Is the calculator price final?</summary><div>It is our published price for what you selected. We confirm it in a fixed written quote after a short chat. The quote only changes if you change the scope.</div></details>
 <details><summary>What does a website cost every month after launch?</summary><div>Hosting and a domain cost about ₹3,000–8,000 a year in India if you manage them yourself. Our Care plan is ₹999/month (or $39/month internationally) and covers hosting, backups, security and small edits.</div></details>
 <details><summary>Why is your price lower than agencies?</summary><div>We are a small studio with no sales team or office overheads, we hand-code on fast, low-cost hosting, and we reuse our own tested components. You get custom work without paying for an agency's overheads.</div></details>
@@ -372,6 +382,8 @@
 
     $('r-total').textContent = fmt(best.total, c);
     $('r-mini').innerHTML = 'Your price: <strong>' + fmt(best.total, c) + '</strong>' + (plan[2] ? ' + ' + fmt(plan[2], c) + '/mo' : '') + ' · see breakdown ↓';
+    var gst = cur === 'INR' ? Math.round(best.total * 0.18) : 0;
+    $('r-gst').textContent = cur === 'INR' ? '+ 18% GST ' + fmt(gst, c) + ' = ' + fmt(best.total + gst, c) + ' total (GST invoice provided)' : 'No Indian GST for clients outside India';
     $('r-monthly').textContent = plan[2] ? '+ ' + fmt(plan[2], c) + ' / month (' + plan[1].split(' —')[0] + ')' + (cur === 'INR' ? ' · first month free' : '') : 'One-time · no monthly fee required';
     $('r-pkg').innerHTML = '<strong>' + best.t.name + ' package</strong> · ' + fmt(best.t.price, c) + ' · live in ' + best.t.days;
     var lines = ['<li>' + c.base + '</li>'];
@@ -385,7 +397,7 @@
 
     var typeLabel = $('c-type').selectedOptions[0].text;
     var summary = 'Website estimate (' + cur + '): ' + best.t.name + ' package, ' + fmt(best.total, c) + ' one-time' +
-      (plan[2] ? ' + ' + fmt(plan[2], c) + '/mo ' + plan[1].split(' —')[0] : '') +
+      (plan[2] ? ' + ' + fmt(plan[2], c) + '/mo ' + plan[1].split(' —')[0] : '') + (cur === 'INR' ? ' (+18% GST)' : '') +
       '\nBusiness: ' + typeLabel + '\nPages: ' + (pages === 5 ? 'up to 5' : pages === 12 ? '6–12' : '13+') +
       '\nFeatures: ' + (feats.length ? feats.map(function (f) { return c.names[f]; }).join(', ') : 'none');
     var greet = cur === 'INR' ? 'Namaste Zera Technologies,' : 'Hi Zera Technologies,';
@@ -448,6 +460,7 @@
         <li>Email: <a href="mailto:hello@zeratech.io" data-loc="footer">hello@zeratech.io</a></li>
         <li>WhatsApp: <a href="https://wa.me/919835102324" data-loc="footer">+91 98351 02324</a></li>
         <li>Hours: Mon–Sat, India time (IST, UTC+5:30)</li>
+        <li>GST-registered business · GST invoices</li>
       </ul>
     </div>
   </div>
