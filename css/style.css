@@ -217,3 +217,4 @@ p{margin:0 0 1em}
 .lead-mini{margin-top:14px;border-top:1px solid var(--line);padding-top:12px;gap:10px}
 .mini{display:none}
 @media(max-width:959px){.mini{display:block;position:sticky;top:66px;z-index:5;background:var(--ink);color:#fff;text-decoration:none;border-radius:10px;padding:10px 14px;font-size:.95rem;margin-bottom:4px}.mini strong{color:#7FD8D2}.mini:hover{color:#fff}}
+.result .gst{font-size:.9rem;margin-top:2px}
