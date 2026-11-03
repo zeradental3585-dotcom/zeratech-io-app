@@ -195,3 +195,25 @@ p{margin:0 0 1em}
 
 /* WhatsApp float: keep it from covering text on phones */
 @media(max-width:640px){body{padding-bottom:76px}.wa-float{right:12px;bottom:12px}}
+
+/* Website cost calculator */
+.calc-grid{display:grid;gap:20px;align-items:start}
+@media(min-width:960px){.calc-grid{grid-template-columns:1.1fr .9fr}.result{position:sticky;top:80px}}
+.calc fieldset{border:0;padding:0;margin:0}
+.calc legend{font-weight:700;font-size:.95rem;margin-bottom:6px}
+.seg{display:flex;flex-wrap:wrap;gap:8px}
+.seg label{display:flex;align-items:center;gap:8px;border:1px solid #c9d3e3;border-radius:10px;padding:10px 14px;font-weight:600;cursor:pointer;margin:0}
+.seg label:has(input:checked){border-color:var(--brand);background:#E3F4F3;color:var(--brand-dark)}
+.seg input,.checks input{accent-color:var(--brand);width:auto;margin:0}
+.checks{display:grid;gap:8px}
+.checks label{display:flex;align-items:center;gap:10px;font-weight:500;margin:0;cursor:pointer;padding:6px 0}
+.result .big{font-size:clamp(2.2rem,7vw,3rem);font-weight:800;line-height:1.1;color:var(--ink)}
+.result .muted{color:var(--muted);font-weight:600;margin-top:4px}
+.result .pkg{margin:14px 0 6px}
+.result .lines{padding-left:1.1em;margin:0 0 12px;font-size:.95rem}
+.result .market{background:var(--bg-soft);border-radius:12px;padding:12px 14px;font-size:.92rem;margin:12px 0}
+.result .market ul{margin:6px 0 0;padding-left:1.1em}
+.result .note{background:#fff8e6;border:1px solid #f5d38a;border-radius:10px;padding:10px 12px;font-size:.93rem}
+.lead-mini{margin-top:14px;border-top:1px solid var(--line);padding-top:12px;gap:10px}
+.mini{display:none}
+@media(max-width:959px){.mini{display:block;position:sticky;top:66px;z-index:5;background:var(--ink);color:#fff;text-decoration:none;border-radius:10px;padding:10px 14px;font-size:.95rem;margin-bottom:4px}.mini strong{color:#7FD8D2}.mini:hover{color:#fff}}
