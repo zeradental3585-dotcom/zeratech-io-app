@@ -34,7 +34,7 @@
   var isIndia = document.documentElement.getAttribute('data-audience') === 'india';
 
   function waText(topic) {
-    var greet = isIndia ? 'Namaste Satish ji,' : 'Hi Satish,';
+    var greet = isIndia ? 'Namaste Zera Technologies,' : 'Hi Zera Technologies,';
     return greet + ' I found you on ' + SITE_LABEL + '.\n' +
       'Page: ' + pageName + ' (' + pageUrl + ')\n' +
       (topic ? 'Interested in: ' + topic + '\n' : '') +
@@ -55,7 +55,7 @@
     document.querySelectorAll('a[href^="mailto:"]').forEach(function (a) {
       var topic = a.getAttribute('data-topic') || '';
       var subject = 'Project enquiry from ' + SITE_LABEL + (topic ? ' – ' + topic : '');
-      var body = 'Hi Satish,\n\nSite: ' + SITE_LABEL + '\nPage: ' + pageName + ' (' + pageUrl + ')\n' +
+      var body = 'Hello Zera Technologies,\n\nSite: ' + SITE_LABEL + '\nPage: ' + pageName + ' (' + pageUrl + ')\n' +
         'Came from: ' + cameFrom + '\n\nAbout my project:\n- Business / company:\n- What I need:\n- Budget:\n- Timeline:\n\nThanks,';
       a.href = 'mailto:' + EMAIL + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
       a.addEventListener('click', function () {
@@ -116,7 +116,7 @@
           headers: { 'Content-Type': 'text/plain;charset=utf-8' },
           body: JSON.stringify(data)
         }).then(function () {
-          statusEl.textContent = 'Thank you! Your request has reached Satish. For a faster reply, message on WhatsApp too.';
+          statusEl.textContent = 'Thank you! Your request has reached us. For a faster reply, message on WhatsApp too.';
           statusEl.className = 'form-status ok';
           track('quote_form_submit', { form: form.getAttribute('data-quote-form') || 'quote', service: data.service || '' });
           form.reset();
