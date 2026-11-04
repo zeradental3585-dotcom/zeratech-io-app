@@ -2,6 +2,14 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<script>(function(){var d=document.documentElement,s=null,r,a=d.getAttribute('data-audience');
+try{s=localStorage.getItem('zt_region')}catch(e){}
+var h=location.hash;if(h==='#international'||h==='#india'){s=h==='#india'?'in':'intl';try{localStorage.setItem('zt_region',s)}catch(e){}}
+if(s!=='in'&&s!=='intl'){if(/bot|crawl|spider|slurp|lighthouse|preview/i.test(navigator.userAgent)){d.className+=' r-all';return}
+var tz='';try{tz=Intl.DateTimeFormat().resolvedOptions().timeZone||''}catch(e){}
+s=/Calcutta|Kolkata/.test(tz)?'in':(tz?'intl':(/-IN$|^hi/i.test(navigator.language||'')?'in':'intl'));d.setAttribute('data-detected','1')}
+r=a?(a==='india'?'in':'intl'):s;if(a&&r!==s)d.setAttribute('data-suggest',s);
+d.className+=' r-'+r;d.setAttribute('data-region',r)})();</script>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Web Development, App &amp; SEO Services | Zera Technologies</title>
 <meta name="description" content="Website development from $249, cross-platform apps from $1,799, monthly SEO from $129 and custom platforms. Hand-coded, mobile-first, built to rank.">
@@ -212,12 +220,17 @@
 <header class="site-header">
   <div class="wrap">
     <a class="logo" href="/" aria-label="Zera Technologies home"><img src="/img/logo-mark.svg" alt="" width="40" height="41"><span class="wordmark">ZERA<small>TECH</small></span></a>
+    <div class="region" role="group" aria-label="Choose your region">
+      <button type="button" data-set-region="in" aria-pressed="false"><span class="rf">₹</span>India</button>
+      <button type="button" data-set-region="intl" aria-pressed="false"><span class="rf">$</span><span class="lg">International</span><span class="sm">Global</span></button>
+    </div>
     <button class="menu-btn" aria-expanded="false" aria-controls="nav">Menu</button>
     <nav id="nav" class="nav" aria-label="Main">
 <a href="/services.html" aria-current="page">Services</a>
 <a href="/portfolio.html">Portfolio</a>
 <a href="/pricing.html">Pricing</a>
-<a href="/white-label-web-development.html">For agencies</a>
+<a href="/website-cost-in-india.html" data-r="in">Cost guide</a>
+<a href="/white-label-web-development.html" data-r="intl">For agencies</a>
 <a href="/about.html">About</a>
 <a href="/contact.html">Contact</a>
 <a class="btn btn-primary" href="/free-website-audit.html">Free audit</a>
@@ -245,7 +258,7 @@
         <li>Blog / CMS, booking or e-commerce if you need it</li>
         <li>SEO essentials and analytics on day one</li>
       </ul>
-      <p class="price">$249 <small>one-time, from</small></p>
+      <p class="price"><span data-r="in">₹9,999 <small>+ GST, from</small></span><span class="r-sep"> / </span><span data-r="intl">$249 <small>one-time, from</small></span></p>
       <a class="btn btn-wa" href="https://wa.me/918893585348" data-topic="Website development" data-loc="services">Ask about a website</a>
     </article>
     <article class="card" id="apps">
@@ -256,7 +269,7 @@
         <li>Backend and admin panel</li>
         <li>App-store submission support</li>
       </ul>
-      <p class="price">$1,799 <small>from</small></p>
+      <p class="price"><span data-r="in">On quote</span><span class="r-sep"> / </span><span data-r="intl">$1,799 <small>from</small></span></p>
       <a class="btn btn-wa" href="https://wa.me/918893585348" data-topic="Mobile app" data-loc="services">Ask about an app</a>
     </article>
     <article class="card featured" id="seo">
@@ -269,7 +282,7 @@
         <li>Local SEO and Google Business Profile</li>
         <li>Monthly report in plain English</li>
       </ul>
-      <p class="price">$129 <small>/ month, from</small></p>
+      <p class="price"><span data-r="in">₹7,999 <small>/ month + GST</small></span><span class="r-sep"> / </span><span data-r="intl">$129 <small>/ month, from</small></span></p>
       <a class="btn btn-wa" href="https://wa.me/918893585348" data-topic="Monthly SEO" data-loc="services">Ask about SEO</a>
     </article>
     <article class="card" id="custom">
@@ -293,7 +306,12 @@
       <h2>Keep it growing with a monthly plan</h2>
       <p class="lead">A website brings enquiries when it keeps getting new pages, fresh information and fixes. That's what our monthly plans do.</p>
     </div>
-    <div class="grid g3">
+    <div class="grid g3" data-r="in">
+      <article class="card"><h3>Care</h3><p class="price">₹999 <small>/ mo + GST</small></p><p>Hosting and domain renewal, SSL, daily backups, security updates and up to 5 small edits a month.</p></article>
+      <article class="card"><h3>Care Plus</h3><p class="price">₹1,999 <small>/ mo + GST</small></p><p>Unlimited small edits, a Google Business Profile post and an SEO article every month, monthly WhatsApp report.</p></article>
+      <article class="card"><h3>Local SEO</h3><p class="price">₹7,999 <small>/ mo + GST</small></p><p>Care Plus + 4 new SEO pages a month, citations, review growth and ranking reports.</p></article>
+    </div>
+    <div class="grid g3" data-r="intl">
       <article class="card"><h3>Local SEO Starter</h3><p class="price">$129 <small>/ mo</small></p><p>Google Business Profile, on-page SEO for core pages, monthly report.</p></article>
       <article class="card"><h3>Growth SEO</h3><p class="price">$299 <small>/ mo</small></p><p>Starter + ongoing content production and technical SEO monitoring.</p></article>
       <article class="card"><h3>Full SEO Program</h3><p class="price">$599 <small>/ mo</small></p><p>Growth + multi-language/regional SEO, link building and priority support.</p></article>
@@ -305,10 +323,15 @@
 <section class="section">
   <div class="wrap">
     <div class="center"><span class="eyebrow">Who we build for</span><h2>Popular requests</h2></div>
-    <div class="grid g3">
+    <div class="grid g3" data-r="in">
+      <article class="card"><h3>Coaching institutes</h3><p>Courses, batches, toppers and admission enquiries, in Hindi and English.</p><a href="/website-for-coaching-institute.html">Coaching websites →</a></article>
+      <article class="card"><h3>Schools &amp; clinics</h3><p>Admissions, notices and fees for schools; treatments and appointments for clinics.</p><a href="/school-website-design.html">Schools →</a> · <a href="/website-for-doctors-clinics.html">Clinics →</a></article>
+      <article class="card"><h3>Dental clinics</h3><p>A dedicated service with ₹14,999 / ₹29,999 / ₹49,999 packages, plus Zera Care at ₹1,999/month.</p><a href="https://zeradental.in/" target="_blank" rel="noopener" data-portfolio="zeradental">ZeraDental.in →</a></article>
+    </div>
+    <div class="grid g3" data-r="intl">
       <article class="card"><h3>Agencies abroad</h3><p>White-label websites delivered under your brand, with an NDA and full handover.</p><a href="/white-label-web-development.html">White-label development →</a></article>
       <article class="card"><h3>Small businesses (US, UK, AU, CA)</h3><p>Affordable, professional websites with fixed USD pricing and email-first communication.</p><a href="/affordable-web-development-small-business.html">Small-business websites →</a></article>
-      <article class="card"><h3>Dental clinics in India</h3><p>A dedicated service with ₹14,999 / ₹29,999 / ₹49,999 packages, plus Zera Care at ₹1,999/month.</p><a href="https://zeradental.in/" target="_blank" rel="noopener" data-portfolio="zeradental">ZeraDental.in →</a></article>
+      <article class="card"><h3>Startups</h3><p>Launch pages, MVP apps and product sites that load fast and rank, with clear milestones.</p><a href="/how-we-work.html">How we work →</a></article>
     </div>
   </div>
 </section>
@@ -341,31 +364,41 @@
       <h3>Zera Technologies</h3>
       <p>Websites, apps and SEO for small businesses in India and worldwide. Based in Madhepura, Bihar, India.</p>
     </div>
-    <div>
+    <div data-r="in">
       <h3>For India</h3>
       <ul>
         <li><a href="/website-for-coaching-institute.html">Coaching institute websites</a></li>
         <li><a href="/school-website-design.html">School website design</a></li>
         <li><a href="/website-for-doctors-clinics.html">Doctor &amp; clinic websites</a></li>
         <li><a href="/website-for-ca-and-law-firms.html">CA &amp; law firm websites</a></li>
+        <li><a href="https://zeradental.in/" target="_blank" rel="noopener">Dental clinic websites</a></li>
         <li><a href="/hi/coaching-institute-website.html">कोचिंग वेबसाइट (हिंदी)</a></li>
         <li>Cities: <a href="/website-designer-patna.html">Patna</a> · <a href="/website-designer-delhi.html">Delhi</a> · <a href="/website-designer-lucknow.html">Lucknow</a></li>
       </ul>
     </div>
+    <div data-r="intl">
+      <h3>International</h3>
+      <ul>
+        <li><a href="/affordable-web-development-small-business.html">Small-business websites (USD)</a></li>
+        <li><a href="/white-label-web-development.html">White-label for agencies</a></li>
+        <li><a href="/how-we-work.html">How we work across time zones</a></li>
+        <li><a href="/small-business-website-cost.html">Website cost in USD (guide)</a></li>
+        <li><a href="/pricing.html#international">USD pricing</a></li>
+      </ul>
+    </div>
     <div>
-      <h3>Services</h3>
+      <h3>Services &amp; guides</h3>
       <ul>
         <li><a href="/services.html">All services</a></li>
         <li><a href="/pricing.html">Pricing</a></li>
-        <li><a href="/white-label-web-development.html">White-label for agencies</a></li>
-        <li><a href="/affordable-web-development-small-business.html">Small-business websites (USD)</a></li>
         <li><a href="/free-website-audit.html">Free website audit</a></li>
         <li><a href="/website-cost-calculator.html">Website cost calculator</a></li>
-        <li><a href="/website-cost-in-india.html">Website cost in India (guide)</a></li>
-        <li><a href="/small-business-website-cost.html">Website cost in USD (guide)</a></li>
-        <li><a href="/website-maintenance-cost-india.html">Website maintenance guide</a></li>
-        <li><a href="/google-business-profile-setup-india.html">Google Business Profile guide</a></li>
-        <li><a href="/how-to-choose-web-developer-india.html">How to choose a web developer</a></li>
+        <li data-r="in"><a href="/website-cost-in-india.html">Website cost in India (guide)</a></li>
+        <li data-r="in"><a href="/website-maintenance-cost-india.html">Website maintenance guide</a></li>
+        <li data-r="in"><a href="/google-business-profile-setup-india.html">Google Business Profile guide</a></li>
+        <li data-r="in"><a href="/how-to-choose-web-developer-india.html">How to choose a web developer</a></li>
+        <li data-r="intl"><a href="/white-label-web-development.html">White-label development</a></li>
+        <li data-r="intl"><a href="/small-business-website-cost.html">Small business website cost</a></li>
       </ul>
     </div>
     <div>
@@ -383,7 +416,7 @@
       <ul>
         <li>Email: <a href="mailto:hello@zeratech.io" data-loc="footer">hello@zeratech.io</a></li>
         <li>WhatsApp: <a href="https://wa.me/918893585348" data-loc="footer">+91 88935 85348</a></li>
-        <li>Hours: Mon–Sat, India time (IST, UTC+5:30)</li>
+        <li>Hours: Mon–Sat, 9 AM–7 PM IST<span data-r="intl"> (UTC+5:30)</span></li>
         <li>GST-registered business · GST invoices</li>
       </ul>
     </div>

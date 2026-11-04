@@ -1,7 +1,15 @@
 <!doctype html>
-<html lang="en" data-audience="intl">
+<html lang="en" data-audience="intl" data-alt="/">
 <head>
 <meta charset="utf-8">
+<script>(function(){var d=document.documentElement,s=null,r,a=d.getAttribute('data-audience');
+try{s=localStorage.getItem('zt_region')}catch(e){}
+var h=location.hash;if(h==='#international'||h==='#india'){s=h==='#india'?'in':'intl';try{localStorage.setItem('zt_region',s)}catch(e){}}
+if(s!=='in'&&s!=='intl'){if(/bot|crawl|spider|slurp|lighthouse|preview/i.test(navigator.userAgent)){d.className+=' r-all';return}
+var tz='';try{tz=Intl.DateTimeFormat().resolvedOptions().timeZone||''}catch(e){}
+s=/Calcutta|Kolkata/.test(tz)?'in':(tz?'intl':(/-IN$|^hi/i.test(navigator.language||'')?'in':'intl'));d.setAttribute('data-detected','1')}
+r=a?(a==='india'?'in':'intl'):s;if(a&&r!==s)d.setAttribute('data-suggest',s);
+d.className+=' r-'+r;d.setAttribute('data-region',r)})();</script>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>White-Label Web Development India for Agencies | Zera Tech</title>
 <meta name="description" content="White-label websites for agencies in the US, UK, Canada, Australia and the Gulf. Built in India under your brand, NDA on request, fixed USD quotes from $249.">
@@ -195,12 +203,17 @@
 <header class="site-header">
   <div class="wrap">
     <a class="logo" href="/" aria-label="Zera Technologies home"><img src="/img/logo-mark.svg" alt="" width="40" height="41"><span class="wordmark">ZERA<small>TECH</small></span></a>
+    <div class="region" role="group" aria-label="Choose your region">
+      <button type="button" data-set-region="in" aria-pressed="false"><span class="rf">₹</span>India</button>
+      <button type="button" data-set-region="intl" aria-pressed="false"><span class="rf">$</span><span class="lg">International</span><span class="sm">Global</span></button>
+    </div>
     <button class="menu-btn" aria-expanded="false" aria-controls="nav">Menu</button>
     <nav id="nav" class="nav" aria-label="Main">
 <a href="/services.html">Services</a>
 <a href="/portfolio.html">Portfolio</a>
 <a href="/pricing.html">Pricing</a>
-<a href="/white-label-web-development.html" aria-current="page">For agencies</a>
+<a href="/website-cost-in-india.html" data-r="in">Cost guide</a>
+<a href="/white-label-web-development.html" aria-current="page" data-r="intl">For agencies</a>
 <a href="/about.html">About</a>
 <a href="/contact.html">Contact</a>
 <a class="btn btn-primary" href="/free-website-audit.html">Free audit</a>
@@ -304,31 +317,41 @@
       <h3>Zera Technologies</h3>
       <p>Websites, apps and SEO for small businesses in India and worldwide. Based in Madhepura, Bihar, India.</p>
     </div>
-    <div>
+    <div data-r="in">
       <h3>For India</h3>
       <ul>
         <li><a href="/website-for-coaching-institute.html">Coaching institute websites</a></li>
         <li><a href="/school-website-design.html">School website design</a></li>
         <li><a href="/website-for-doctors-clinics.html">Doctor &amp; clinic websites</a></li>
         <li><a href="/website-for-ca-and-law-firms.html">CA &amp; law firm websites</a></li>
+        <li><a href="https://zeradental.in/" target="_blank" rel="noopener">Dental clinic websites</a></li>
         <li><a href="/hi/coaching-institute-website.html">कोचिंग वेबसाइट (हिंदी)</a></li>
         <li>Cities: <a href="/website-designer-patna.html">Patna</a> · <a href="/website-designer-delhi.html">Delhi</a> · <a href="/website-designer-lucknow.html">Lucknow</a></li>
       </ul>
     </div>
+    <div data-r="intl">
+      <h3>International</h3>
+      <ul>
+        <li><a href="/affordable-web-development-small-business.html">Small-business websites (USD)</a></li>
+        <li><a href="/white-label-web-development.html">White-label for agencies</a></li>
+        <li><a href="/how-we-work.html">How we work across time zones</a></li>
+        <li><a href="/small-business-website-cost.html">Website cost in USD (guide)</a></li>
+        <li><a href="/pricing.html#international">USD pricing</a></li>
+      </ul>
+    </div>
     <div>
-      <h3>Services</h3>
+      <h3>Services &amp; guides</h3>
       <ul>
         <li><a href="/services.html">All services</a></li>
         <li><a href="/pricing.html">Pricing</a></li>
-        <li><a href="/white-label-web-development.html">White-label for agencies</a></li>
-        <li><a href="/affordable-web-development-small-business.html">Small-business websites (USD)</a></li>
         <li><a href="/free-website-audit.html">Free website audit</a></li>
         <li><a href="/website-cost-calculator.html">Website cost calculator</a></li>
-        <li><a href="/website-cost-in-india.html">Website cost in India (guide)</a></li>
-        <li><a href="/small-business-website-cost.html">Website cost in USD (guide)</a></li>
-        <li><a href="/website-maintenance-cost-india.html">Website maintenance guide</a></li>
-        <li><a href="/google-business-profile-setup-india.html">Google Business Profile guide</a></li>
-        <li><a href="/how-to-choose-web-developer-india.html">How to choose a web developer</a></li>
+        <li data-r="in"><a href="/website-cost-in-india.html">Website cost in India (guide)</a></li>
+        <li data-r="in"><a href="/website-maintenance-cost-india.html">Website maintenance guide</a></li>
+        <li data-r="in"><a href="/google-business-profile-setup-india.html">Google Business Profile guide</a></li>
+        <li data-r="in"><a href="/how-to-choose-web-developer-india.html">How to choose a web developer</a></li>
+        <li data-r="intl"><a href="/white-label-web-development.html">White-label development</a></li>
+        <li data-r="intl"><a href="/small-business-website-cost.html">Small business website cost</a></li>
       </ul>
     </div>
     <div>
@@ -346,7 +369,7 @@
       <ul>
         <li>Email: <a href="mailto:hello@zeratech.io" data-loc="footer">hello@zeratech.io</a></li>
         <li>WhatsApp: <a href="https://wa.me/918893585348" data-loc="footer">+91 88935 85348</a></li>
-        <li>Hours: Mon–Sat, India time (IST, UTC+5:30)</li>
+        <li>Hours: Mon–Sat, 9 AM–7 PM IST<span data-r="intl"> (UTC+5:30)</span></li>
         <li>GST-registered business · GST invoices</li>
       </ul>
     </div>

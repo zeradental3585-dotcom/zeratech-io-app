@@ -2,6 +2,14 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<script>(function(){var d=document.documentElement,s=null,r,a=d.getAttribute('data-audience');
+try{s=localStorage.getItem('zt_region')}catch(e){}
+var h=location.hash;if(h==='#international'||h==='#india'){s=h==='#india'?'in':'intl';try{localStorage.setItem('zt_region',s)}catch(e){}}
+if(s!=='in'&&s!=='intl'){if(/bot|crawl|spider|slurp|lighthouse|preview/i.test(navigator.userAgent)){d.className+=' r-all';return}
+var tz='';try{tz=Intl.DateTimeFormat().resolvedOptions().timeZone||''}catch(e){}
+s=/Calcutta|Kolkata/.test(tz)?'in':(tz?'intl':(/-IN$|^hi/i.test(navigator.language||'')?'in':'intl'));d.setAttribute('data-detected','1')}
+r=a?(a==='india'?'in':'intl'):s;if(a&&r!==s)d.setAttribute('data-suggest',s);
+d.className+=' r-'+r;d.setAttribute('data-region',r)})();</script>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Website Development Company in India | Zera Technologies</title>
 <meta name="description" content="Fast, mobile-first websites, apps and SEO for small businesses in India and worldwide. Websites from $249 plus monthly care and SEO plans. Get a quote today.">
@@ -217,12 +225,17 @@
 <header class="site-header">
   <div class="wrap">
     <a class="logo" href="/" aria-label="Zera Technologies home"><img src="/img/logo-mark.svg" alt="" width="40" height="41"><span class="wordmark">ZERA<small>TECH</small></span></a>
+    <div class="region" role="group" aria-label="Choose your region">
+      <button type="button" data-set-region="in" aria-pressed="false"><span class="rf">₹</span>India</button>
+      <button type="button" data-set-region="intl" aria-pressed="false"><span class="rf">$</span><span class="lg">International</span><span class="sm">Global</span></button>
+    </div>
     <button class="menu-btn" aria-expanded="false" aria-controls="nav">Menu</button>
     <nav id="nav" class="nav" aria-label="Main">
 <a href="/services.html">Services</a>
 <a href="/portfolio.html">Portfolio</a>
 <a href="/pricing.html">Pricing</a>
-<a href="/white-label-web-development.html">For agencies</a>
+<a href="/website-cost-in-india.html" data-r="in">Cost guide</a>
+<a href="/white-label-web-development.html" data-r="intl">For agencies</a>
 <a href="/about.html">About</a>
 <a href="/contact.html">Contact</a>
 <a class="btn btn-primary" href="/free-website-audit.html">Free audit</a>
@@ -237,23 +250,29 @@
         <span class="eyebrow">Web development · Apps · SEO</span>
         <h1>Websites that bring you <span style="color:var(--brand)">customers</span>, not just compliments.</h1>
         <p class="lead">Fast, mobile-first websites, apps and SEO for small businesses — built and grown by the studio behind nine live websites of its own.</p>
+        <p class="price-line"><span data-r="in">Websites from <strong>₹9,999</strong> + GST · domain &amp; 1-year hosting included</span><span class="r-sep"> · </span><span data-r="intl">Websites from <strong>$249</strong> · fixed USD quote · white-label for agencies</span></p>
         <div class="btn-row">
-          <a class="btn btn-wa" href="https://wa.me/918893585348" data-loc="hero">Chat on WhatsApp</a>
+          <a class="btn btn-wa" href="https://wa.me/918893585348" data-loc="hero" data-r="in">Chat on WhatsApp</a>
+          <a class="btn btn-primary" href="mailto:hello@zeratech.io" data-loc="hero" data-topic="International project" data-r="intl">Email your brief</a>
           <a class="btn btn-ghost" href="/website-cost-calculator.html">Calculate my price</a>
         </div>
-        <nav class="switch" aria-label="Choose your market">
-          <a href="#india"><svg class="ic" aria-hidden="true"><use href="/img/icons.svg#pin"/></svg>I'm in India</a>
-          <a href="#international"><svg class="ic" aria-hidden="true"><use href="/img/icons.svg#globe"/></svg>Outside India</a>
-        </nav>
         <ul class="trust-row">
-          <li>Hand-coded &amp; fast on mobile data</li>
-          <li>English &amp; Hindi</li>
+          <li data-r="in">Hand-coded &amp; fast on mobile data</li>
+          <li data-r="in">English &amp; Hindi</li>
+          <li data-r="in">GST invoice</li>
+          <li data-r="intl">Hand-coded &amp; fast</li>
+          <li data-r="intl">NDA on request</li>
+          <li data-r="intl">Milestone payments</li>
           <li>You own the code</li>
         </ul>
       </div>
-      <div class="showcase" aria-hidden="true">
+      <div class="showcase" aria-hidden="true" data-r="in">
         <a class="shot back" href="/portfolio.html" tabindex="-1"><div class="bar"><i></i><i></i><i></i><span>calcformoney.com</span></div><img src="/img/work/calcformoney.webp" alt="" width="800" height="500"></a>
         <a class="shot front" href="/portfolio.html" tabindex="-1"><div class="bar"><i></i><i></i><i></i><span>bighawala.com</span></div><img src="/img/work/bighawala.webp" alt="" width="800" height="500"></a>
+      </div>
+      <div class="showcase" aria-hidden="true" data-r="intl">
+        <a class="shot back" href="/portfolio.html" tabindex="-1"><div class="bar"><i></i><i></i><i></i><span>bighawala.com</span></div><img src="/img/work/bighawala.webp" alt="" width="800" height="500" loading="lazy"></a>
+        <a class="shot front" href="/portfolio.html" tabindex="-1"><div class="bar"><i></i><i></i><i></i><span>calcformoney.com</span></div><img src="/img/work/calcformoney.webp" alt="" width="800" height="500" loading="lazy"></a>
       </div>
     </div>
   </section>
@@ -275,8 +294,8 @@
   </section>
 
   <section class="section soft" id="india">
-    <div class="wrap grid g2" style="align-items:start">
-      <article class="card">
+    <div class="wrap grid g2 region-pair" style="align-items:start">
+      <article class="card" data-r="in">
         <div class="flag"><svg class="ic" aria-hidden="true"><use href="/img/icons.svg#pin"/></svg></div>
         <h2 style="font-size:1.5rem">For businesses in India</h2>
         <p>Clinics, coaching institutes, schools, CA and law firms, real estate and local shops. Websites that show up on Google and Maps, with a WhatsApp button so customers contact you directly — in Hindi or English.</p>
@@ -288,7 +307,7 @@
           <a class="btn btn-ghost" href="/demos/coaching-institute.html" data-portfolio="demo-coaching">See a sample site</a>
         </div>
       </article>
-      <article class="card" id="international">
+      <article class="card" id="international" data-r="intl">
         <div class="flag"><svg class="ic" aria-hidden="true"><use href="/img/icons.svg#globe"/></svg></div>
         <h2 style="font-size:1.5rem">For international clients &amp; agencies</h2>
         <p>Small businesses, startups and agencies in the US, UK, Canada, Australia and the Gulf who want quality work at India rates — including white-label builds you resell under your own brand.</p>
@@ -309,8 +328,14 @@
         <h2>Build it once. Grow it every month.</h2>
         <p class="lead">Clear starting prices, a fixed written quote before work begins — and a monthly plan so the site keeps bringing enquiries.</p>
       </div>
-      <div class="grid g4">
-        <article class="card"><h3><svg class="ic" aria-hidden="true"><use href="/img/icons.svg#laptop"/></svg>Websites</h3><p class="price">$249 <small>from</small></p><p>Mobile-first site with WhatsApp, forms, Google Maps and on-page SEO.</p></article>
+      <div class="grid g4" data-r="in">
+        <article class="card"><h3><svg class="ic" aria-hidden="true"><use href="/img/icons.svg#laptop"/></svg>Websites</h3><p class="price">₹9,999 <small>+ GST, from</small></p><p>Mobile-first site with WhatsApp, enquiry form, Google Maps and on-page SEO. Domain + 1-year hosting included.</p></article>
+        <article class="card featured"><span class="badge">Recurring</span><h3><svg class="ic" aria-hidden="true"><use href="/img/icons.svg#key"/></svg>Website care</h3><p class="price">₹999 <small>/ month</small></p><p>Hosting, backups, security and small edits every month. First month free with any build.</p></article>
+        <article class="card"><h3><svg class="ic" aria-hidden="true"><use href="/img/icons.svg#trend"/></svg>Local SEO</h3><p class="price">₹7,999 <small>/ month</small></p><p>Google Business Profile, new pages every month, reviews and a plain-language report.</p></article>
+        <article class="card"><h3><svg class="ic" aria-hidden="true"><use href="/img/icons.svg#phone"/></svg>Apps &amp; portals</h3><p class="price">On quote</p><p>Android + iOS apps, admission portals, booking systems and directories.</p></article>
+      </div>
+      <div class="grid g4" data-r="intl">
+        <article class="card"><h3><svg class="ic" aria-hidden="true"><use href="/img/icons.svg#laptop"/></svg>Websites</h3><p class="price">$249 <small>from</small></p><p>Mobile-first site with contact forms, Google Maps and on-page SEO. Fixed USD quote.</p></article>
         <article class="card"><h3><svg class="ic" aria-hidden="true"><use href="/img/icons.svg#phone"/></svg>Apps</h3><p class="price">$1,799 <small>from</small></p><p>Cross-platform iOS + Android apps with backend and admin panel.</p></article>
         <article class="card featured"><span class="badge">Recurring</span><h3><svg class="ic" aria-hidden="true"><use href="/img/icons.svg#trend"/></svg>Monthly SEO</h3><p class="price">$129 <small>/ month</small></p><p>Google Business Profile, new pages, fixes and a plain-English monthly report.</p></article>
         <article class="card"><h3><svg class="ic" aria-hidden="true"><use href="/img/icons.svg#layers"/></svg>Custom platforms</h3><p class="price">On quote</p><p>Directories, calculators, portals and booking systems.</p></article>
@@ -352,8 +377,9 @@
         <h2>Tell us about your business in 2 minutes</h2>
         <p>Send a WhatsApp or email with what you do and what you need. You'll get a clear reply — and a fixed quote if we're a good fit.</p>
         <div class="btn-row" style="justify-content:center">
-          <a class="btn btn-wa" href="https://wa.me/918893585348" data-loc="cta-band">WhatsApp +91 88935 85348</a>
+          <a class="btn btn-wa" href="https://wa.me/918893585348" data-loc="cta-band" data-r="in">WhatsApp +91 88935 85348</a>
           <a class="btn btn-ghost" href="mailto:hello@zeratech.io" data-loc="cta-band">hello@zeratech.io</a>
+          <a class="btn btn-ghost" href="https://wa.me/918893585348" data-loc="cta-band" data-r="intl">WhatsApp</a>
         </div>
       </div>
     </div>
@@ -366,31 +392,41 @@
       <h3>Zera Technologies</h3>
       <p>Websites, apps and SEO for small businesses in India and worldwide. Based in Madhepura, Bihar, India.</p>
     </div>
-    <div>
+    <div data-r="in">
       <h3>For India</h3>
       <ul>
         <li><a href="/website-for-coaching-institute.html">Coaching institute websites</a></li>
         <li><a href="/school-website-design.html">School website design</a></li>
         <li><a href="/website-for-doctors-clinics.html">Doctor &amp; clinic websites</a></li>
         <li><a href="/website-for-ca-and-law-firms.html">CA &amp; law firm websites</a></li>
+        <li><a href="https://zeradental.in/" target="_blank" rel="noopener">Dental clinic websites</a></li>
         <li><a href="/hi/coaching-institute-website.html">कोचिंग वेबसाइट (हिंदी)</a></li>
         <li>Cities: <a href="/website-designer-patna.html">Patna</a> · <a href="/website-designer-delhi.html">Delhi</a> · <a href="/website-designer-lucknow.html">Lucknow</a></li>
       </ul>
     </div>
+    <div data-r="intl">
+      <h3>International</h3>
+      <ul>
+        <li><a href="/affordable-web-development-small-business.html">Small-business websites (USD)</a></li>
+        <li><a href="/white-label-web-development.html">White-label for agencies</a></li>
+        <li><a href="/how-we-work.html">How we work across time zones</a></li>
+        <li><a href="/small-business-website-cost.html">Website cost in USD (guide)</a></li>
+        <li><a href="/pricing.html#international">USD pricing</a></li>
+      </ul>
+    </div>
     <div>
-      <h3>Services</h3>
+      <h3>Services &amp; guides</h3>
       <ul>
         <li><a href="/services.html">All services</a></li>
         <li><a href="/pricing.html">Pricing</a></li>
-        <li><a href="/white-label-web-development.html">White-label for agencies</a></li>
-        <li><a href="/affordable-web-development-small-business.html">Small-business websites (USD)</a></li>
         <li><a href="/free-website-audit.html">Free website audit</a></li>
         <li><a href="/website-cost-calculator.html">Website cost calculator</a></li>
-        <li><a href="/website-cost-in-india.html">Website cost in India (guide)</a></li>
-        <li><a href="/small-business-website-cost.html">Website cost in USD (guide)</a></li>
-        <li><a href="/website-maintenance-cost-india.html">Website maintenance guide</a></li>
-        <li><a href="/google-business-profile-setup-india.html">Google Business Profile guide</a></li>
-        <li><a href="/how-to-choose-web-developer-india.html">How to choose a web developer</a></li>
+        <li data-r="in"><a href="/website-cost-in-india.html">Website cost in India (guide)</a></li>
+        <li data-r="in"><a href="/website-maintenance-cost-india.html">Website maintenance guide</a></li>
+        <li data-r="in"><a href="/google-business-profile-setup-india.html">Google Business Profile guide</a></li>
+        <li data-r="in"><a href="/how-to-choose-web-developer-india.html">How to choose a web developer</a></li>
+        <li data-r="intl"><a href="/white-label-web-development.html">White-label development</a></li>
+        <li data-r="intl"><a href="/small-business-website-cost.html">Small business website cost</a></li>
       </ul>
     </div>
     <div>
@@ -408,7 +444,7 @@
       <ul>
         <li>Email: <a href="mailto:hello@zeratech.io" data-loc="footer">hello@zeratech.io</a></li>
         <li>WhatsApp: <a href="https://wa.me/918893585348" data-loc="footer">+91 88935 85348</a></li>
-        <li>Hours: Mon–Sat, India time (IST, UTC+5:30)</li>
+        <li>Hours: Mon–Sat, 9 AM–7 PM IST<span data-r="intl"> (UTC+5:30)</span></li>
         <li>GST-registered business · GST invoices</li>
       </ul>
     </div>
