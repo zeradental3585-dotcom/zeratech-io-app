@@ -26,7 +26,7 @@
 
   /* ===== 2. Contact prefill ===== */
   var SITE_LABEL = 'Zera Technologies (zeratech.io)';
-  var WA_NUMBER = '919835102324';
+  var WA_NUMBER = '918893585348';
   var EMAIL = 'hello@zeratech.io';
   var pageName = (document.title || location.pathname).split('|')[0].trim();
   var pageUrl = location.origin + location.pathname;
