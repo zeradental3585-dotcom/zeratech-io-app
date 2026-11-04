@@ -218,3 +218,27 @@ p{margin:0 0 1em}
 .mini{display:none}
 @media(max-width:959px){.mini{display:block;position:sticky;top:66px;z-index:5;background:var(--ink);color:#fff;text-decoration:none;border-radius:10px;padding:10px 14px;font-size:.95rem;margin-bottom:4px}.mini strong{color:#7FD8D2}.mini:hover{color:#fff}}
 .result .gst{font-size:.9rem;margin-top:2px}
+/* ===== Region switch (India / International) ===== */
+html.r-in [data-r="intl"],html.r-intl [data-r="in"],html.r-in .r-sep,html.r-intl .r-sep{display:none!important}
+.region{display:flex;align-items:center;background:var(--bg-soft);border:1px solid var(--line);border-radius:999px;padding:3px;margin-left:auto;flex-shrink:0}
+.region button{font:inherit;font-size:.82rem;font-weight:700;color:var(--ink-2);background:none;border:0;border-radius:999px;padding:6px 11px;cursor:pointer;display:flex;align-items:center;gap:5px;line-height:1.1;white-space:nowrap}
+.region button .rf{display:inline-grid;place-items:center;width:18px;height:18px;border-radius:50%;background:#fff;color:var(--brand);font-size:.72rem;border:1px solid var(--line)}
+.region button[aria-pressed="true"]{background:var(--ink);color:#fff}
+.region button[aria-pressed="true"] .rf{background:var(--teal,#0E928C);color:#fff;border-color:transparent}
+.region button:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+.region .lg{display:none}
+@media(min-width:520px){.region .lg{display:inline}.region .sm{display:none}}
+@media(max-width:380px){.region button{padding:6px 8px}.region button .rf{display:none}.wordmark{font-size:1.25rem}}
+@media(min-width:900px){.region{order:3;margin-left:10px}.site-header .nav{margin-left:auto}}
+.region-pair{grid-template-columns:1fr}
+@media(min-width:640px){html.r-all .region-pair{grid-template-columns:repeat(2,1fr)}}
+.region-pair>.card{max-width:none}
+.region-note{background:var(--ink);color:#e9eef7;font-size:.92rem}
+.region-note .wrap{display:flex;align-items:center;justify-content:center;gap:10px 16px;flex-wrap:wrap;padding-top:9px;padding-bottom:9px;text-align:center}
+.region-note a{color:#7fe3dc;font-weight:700}
+.region-note button{background:none;border:0;color:#b9c6da;font:inherit;font-size:1.1rem;cursor:pointer;padding:0 4px;line-height:1}
+.region-flash{animation:rflash .5s ease}
+@keyframes rflash{from{opacity:.35}to{opacity:1}}
+.price-line{font-size:1.02rem;color:var(--ink-2);margin:.2em 0 0}.price-line strong{color:var(--brand)}
+@media(max-width:519px){.region button .rf{display:none}.region button{padding:6px 10px;font-size:.8rem}.site-header .wrap{gap:8px}.menu-btn{padding:7px 10px}}
+@media(max-width:400px){.wordmark{font-size:1.2rem}.logo img{width:34px;height:35px}.region button{padding:6px 8px}}
