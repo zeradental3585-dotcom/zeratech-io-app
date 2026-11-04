@@ -31,7 +31,9 @@
   var pageName = (document.title || location.pathname).split('|')[0].trim();
   var pageUrl = location.origin + location.pathname;
   var cameFrom = document.referrer ? document.referrer : 'Direct visit / typed URL';
-  var isIndia = document.documentElement.getAttribute('data-audience') === 'india';
+  var root = document.documentElement;
+  function region() { return root.classList.contains('r-intl') ? 'intl' : (root.classList.contains('r-in') ? 'in' : ''); }
+  var isIndia = root.getAttribute('data-audience') ? root.getAttribute('data-audience') === 'india' : region() !== 'intl';
 
   function waText(topic) {
     var greet = isIndia ? 'Namaste Zera Technologies,' : 'Hi Zera Technologies,';
@@ -41,7 +43,75 @@
       'I would like to discuss my project.';
   }
 
+  function setWaLinks() {
+    document.querySelectorAll('a[href*="wa.me/"]').forEach(function (a) {
+      if (a.hasAttribute('data-fixed')) return;
+      a.href = 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(waText(a.getAttribute('data-topic') || ''));
+    });
+  }
+
+  /* ===== Region switch: India (₹) / International ($) ===== */
+  function initRegion() {
+    var btns = document.querySelectorAll('[data-set-region]');
+    function paint() {
+      var r = region();
+      document.querySelectorAll('.region [data-set-region]').forEach(function (b) {
+        b.setAttribute('aria-pressed', b.getAttribute('data-set-region') === r ? 'true' : 'false');
+      });
+    }
+    paint();
+    btns.forEach(function (b) {
+      b.addEventListener('click', function (e) {
+        var to = b.getAttribute('data-set-region');
+        if (b.tagName === 'A') e.preventDefault();
+        try { localStorage.setItem('zt_region', to); } catch (err) {}
+        track('region_switch', { region: to, link_location: b.closest('.region') ? 'header' : 'body' });
+        var aud = root.getAttribute('data-audience');
+        if (aud && (aud === 'india' ? 'in' : 'intl') !== to) {
+          location.href = root.getAttribute('data-alt') || '/';
+          return;
+        }
+        if (region() === to) return;
+        root.classList.remove('r-in', 'r-intl', 'r-all');
+        root.classList.add('r-' + to);
+        root.setAttribute('data-region', to);
+        isIndia = to === 'in';
+        paint();
+        setWaLinks();
+        var m = document.getElementById('main');
+        if (m) { m.classList.remove('region-flash'); void m.offsetWidth; m.classList.add('region-flash'); }
+        document.dispatchEvent(new CustomEvent('zt:region', { detail: to }));
+      });
+    });
+
+    // Single-audience page but the visitor seems to be from the other region: suggest, never force.
+    var sug = root.getAttribute('data-suggest');
+    var dismissed = false;
+    try { dismissed = sessionStorage.getItem('zt_note') === '1'; } catch (err) {}
+    if (sug && !dismissed && root.getAttribute('data-alt')) {
+      var bar = document.createElement('div');
+      bar.className = 'region-note';
+      bar.setAttribute('role', 'note');
+      bar.innerHTML = '<div class="wrap"><span>' + (sug === 'intl'
+        ? 'Outside India? We also build for clients worldwide, with prices in US dollars.'
+        : 'In India? See our services with prices in ₹ (GST invoice).') +
+        '</span><a href="' + root.getAttribute('data-alt') + '" data-note-go>' + (sug === 'intl' ? 'International site →' : 'India site →') +
+        '</a><button type="button" aria-label="Dismiss">×</button></div>';
+      var header = document.querySelector('.site-header');
+      header.parentNode.insertBefore(bar, header);
+      bar.querySelector('[data-note-go]').addEventListener('click', function () {
+        try { localStorage.setItem('zt_region', sug); } catch (err) {}
+        track('region_switch', { region: sug, link_location: 'suggestion' });
+      });
+      bar.querySelector('button').addEventListener('click', function () {
+        bar.remove();
+        try { sessionStorage.setItem('zt_note', '1'); } catch (err) {}
+      });
+    }
+  }
+
   function init() {
+    initRegion();
     document.querySelectorAll('a[href*="wa.me/"]').forEach(function (a) {
       var topic = a.getAttribute('data-topic') || '';
       a.href = 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(waText(topic));
@@ -77,7 +147,7 @@
         entries.forEach(function (en) {
           if (en.isIntersecting && !seen) {
             seen = true;
-            track('pricing_view', { currency: isIndia ? 'INR' : 'USD' });
+            track('pricing_view', { currency: isIndia ? 'INR' : 'USD', region: region() || 'all' });
             io.disconnect();
           }
         });
