@@ -112,6 +112,9 @@
 
   function init() {
     initRegion();
+    document.querySelectorAll('[data-track-book]').forEach(function (a) {
+      a.addEventListener('click', function () { track('discovery_call_click', { region: a.getAttribute('data-track-book'), page_path: location.pathname }); });
+    });
     document.querySelectorAll('a[href*="wa.me/"]').forEach(function (a) {
       var topic = a.getAttribute('data-topic') || '';
       a.href = 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(waText(topic));
