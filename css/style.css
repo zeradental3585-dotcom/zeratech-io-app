@@ -12,7 +12,7 @@
   --brand-dark:#08605C;
   --teal:#0E928C;       /* exact logo teal for marks and accents */
   --accent:#f59e0b;     /* amber highlight */
-  --wa:#1fae5b;         /* WhatsApp green (accessible on white text) */
+  --wa:#15803d;         /* WhatsApp green (accessible on white text) */
   --radius:14px;
   --shadow:0 6px 24px rgba(27,42,68,.08);
   --max:1120px;
@@ -68,7 +68,7 @@ p{margin:0 0 1em}
 .btn-primary{background:var(--brand);color:#fff}
 .btn-primary:hover{background:var(--brand-dark);color:#fff}
 .btn-wa{background:var(--wa);color:#fff}
-.btn-wa:hover{background:#178a48;color:#fff}
+.btn-wa:hover{background:#116632;color:#fff}
 .btn-ghost{background:transparent;border-color:var(--line);color:var(--ink)}
 .btn-ghost:hover{border-color:var(--brand);color:var(--brand)}
 .section.dark .btn-ghost{border-color:#3a4c6d;color:#fff}
@@ -120,7 +120,7 @@ p{margin:0 0 1em}
 /* CTA band */
 .cta-band{background:var(--brand);color:#fff;border-radius:20px;padding:34px 22px;text-align:center}
 .cta-band h2{color:#fff}
-.cta-band p{color:#dbe6ff}
+.cta-band p{color:#fff}
 .cta-band .btn-ghost{border-color:rgba(255,255,255,.5);color:#fff}
 
 /* Footer */
@@ -134,8 +134,8 @@ p{margin:0 0 1em}
 .legal a{color:#aab6cc}
 
 /* Floating WhatsApp */
-.wa-float{position:fixed;right:16px;bottom:16px;z-index:60;display:flex;align-items:center;gap:8px;background:var(--wa);color:#fff;border-radius:99px;padding:12px 18px;font-weight:700;text-decoration:none;box-shadow:0 8px 24px rgba(31,174,91,.4)}
-.wa-float:hover{color:#fff;background:#178a48}
+.wa-float{position:fixed;right:16px;bottom:16px;z-index:60;display:flex;align-items:center;gap:8px;background:var(--wa);color:#fff;border-radius:99px;padding:12px 18px;font-weight:700;text-decoration:none;box-shadow:0 8px 24px rgba(21,128,61,.35)}
+.wa-float:hover{color:#fff;background:#116632}
 .wa-float svg{width:22px;height:22px}
 @media(max-width:420px){.wa-float span{display:none}.wa-float{padding:14px}}
 
@@ -242,3 +242,4 @@ html.r-in [data-r="intl"],html.r-intl [data-r="in"],html.r-in .r-sep,html.r-intl
 .price-line{font-size:1.02rem;color:var(--ink-2);margin:.2em 0 0}.price-line strong{color:var(--brand)}
 @media(max-width:519px){.region button .rf{display:none}.region button{padding:6px 10px;font-size:.8rem}.site-header .wrap{gap:8px}.menu-btn{padding:7px 10px}}
 @media(max-width:400px){.wordmark{font-size:1.2rem}.logo img{width:34px;height:35px}.region button{padding:6px 8px}}
+.wordmark small{color:var(--brand)}.site-footer p a,.site-footer .wrap>a{text-decoration:underline}
