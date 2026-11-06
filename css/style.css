@@ -243,3 +243,6 @@ html.r-in [data-r="intl"],html.r-intl [data-r="in"],html.r-in .r-sep,html.r-intl
 @media(max-width:519px){.region button .rf{display:none}.region button{padding:6px 10px;font-size:.8rem}.site-header .wrap{gap:8px}.menu-btn{padding:7px 10px}}
 @media(max-width:400px){.wordmark{font-size:1.2rem}.logo img{width:34px;height:35px}.region button{padding:6px 8px}}
 .wordmark small{color:var(--brand)}.site-footer p a,.site-footer .wrap>a{text-decoration:underline}
+.offer .offer-grid .card h3{font-size:1.05rem}
+.offer .offer-grid .card p{font-size:.95rem;margin:0}
+.offer-small{font-size:.85rem;color:var(--muted);margin-top:10px}
