@@ -22,6 +22,12 @@
     params = params || {};
     params.page_path = location.pathname;
     try { gtag('event', name, params); } catch (e) {}
+    /* Every enquiry action also sends GA4's recommended lead event,
+       so one key event ("generate_lead") counts all enquiries. */
+    var LEADS = { whatsapp_click: 'whatsapp', email_click: 'email', quote_form_submit: 'form', discovery_call_click: 'booking' };
+    if (LEADS[name]) {
+      try { gtag('event', 'generate_lead', { lead_method: LEADS[name], link_location: params.link_location || '', page_path: params.page_path }); } catch (e) {}
+    }
   }
 
   /* ===== 2. Contact prefill ===== */
