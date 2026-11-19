@@ -257,6 +257,16 @@ def build(lead):
     wd = digits(lead.get("whatsapp") or (phone if is_mobile(pd) and not looks_landline else ""))
     hi = lead.get("lang", "hi-en") != "en"
 
+    def eng_only(s):
+        """Pack titles are sometimes hardcoded as 'Hindi · English' or 'English · Hindi'.
+        In en-only mode, keep just the pure-ASCII segment so no Devanagari leaks onto
+        an English-language preview (e.g. for Tamil Nadu / other non-Hindi-belt leads)."""
+        if hi or "·" not in s:
+            return s
+        parts = [x.strip() for x in s.split("·")]
+        ascii_parts = [x for x in parts if all(ord(c) < 128 for c in x)]
+        return ascii_parts[0] if ascii_parts else s
+
     def biz_wa(text):
         if not wd: return f"tel:+{pd}" if pd else "#contact"
         return f"https://wa.me/{wd}?text=" + urllib.parse.quote(text)
@@ -411,20 +421,20 @@ footer{{background:#1a1a1a;color:#cfcfcf;padding:22px 0 92px;font-size:.86rem}}f
 </div></section>
 
 <section id="services"><div class="wrap">
-  <h2>{E(p['services_title'])}</h2>
+  <h2>{E(eng_only(p['services_title']))}</h2>
   <p class="sub">Each service gets its own section, so people searching Google for it can find {E(name)}.</p>
   <div class="grid g3">{svc_html}</div>
 </div></section>
 
 <section class="soft"><div class="wrap">
-  <h2>{E(p['table_title'])}</h2><p class="sub">{E(p['table_note'])}</p>
+  <h2>{E(eng_only(p['table_title']))}</h2><p class="sub">{E(p['table_note'])}</p>
   <div class="tbl"><table>{table_html}</table></div>
   {law_note}
 </div></section>
 
 <section><div class="wrap grid g2">
   <div><h2>About {E(name)}</h2><p>{E(about)}</p><ul class="why">{why_html}</ul></div>
-  <div><h2>{E(p['proof_title'])}</h2><p class="sub">{E(p['proof_note'])}</p><div class="grid proof">{proof_html}</div></div>
+  <div><h2>{E(eng_only(p['proof_title']))}</h2><p class="sub">{E(p['proof_note'])}</p><div class="grid proof">{proof_html}</div></div>
 </div></section>
 
 <section class="soft" id="contact"><div class="wrap grid g2" style="align-items:start">
